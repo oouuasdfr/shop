@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المتجر الإلكتروني</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- رأس الموقع -->
+    <header>
+        <nav>
+            <h1 class="logo">متجري</h1>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+                <li><a href="about.html">من نحن</a></li>
+            </ul>
+
+           <div class="search-box">
+    <input type="text" id="searchInput" placeholder="ابحث عن منتج...">
+    <button id="searchButton">🔍</button>
+    <ul id="suggestions" class="suggestions-list"></ul>
+    
+</div>
+
+        </nav>
+    </header>
+
+    
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="images/hero/hero1.jpg" alt="صورة 1"></div>
+            <div class="slide"><img src="images/hero/hero5.jpg" alt="صورة 2"></div>
+            <div class="slide"><img src="images/hero/hero3.jpg" alt="صورة 3"></div>
+        </div>
+
+        <!-- الأسهم -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <!-- نص ترحيبي -->
+        <div class="hero-text">
+            <h2>أهلاً بك في متجري</h2>
+            <p>أفضل المنتجات بأفضل الأسعار</p>
+        </div>
+    </div>
+
+    <!-- الأقسام -->
+    <section id="categories">
+        <h2>الأقسام</h2>
+        <div class="categories-container">
+
+            <div class="category-card">
+                <a href="phones.html">
+                    <img src="images/phones/phone1.jpg" alt="قسم الهواتف">
+                    <h3>📱 الهواتف</h3>
+                </a>
+            </div>
+
+            <div class="category-card">
+                <a href="laptops.html">
+                    <img src="images/laptops/laptop1.jpg" alt="قسم اللابتوبات">
+                    <h3>💻 اللابتوبات</h3>
+                </a>
+            </div>
+
+            <div class="category-card">
+                <a href="accessories.html">
+                    <img src="images/accessories/accessory1.jpg" alt="قسم الإكسسوارات">
+                    <h3>🕶️ الإكسسوارات</h3>
+                </a>
+            </div>
+
+            <div class="category-card">
+                <a href="cars.html">
+                    <img src="images/cars/car1.jpg" alt="قسم السيارات">
+                    <h3>🚗 السيارات</h3>
+                </a>
+            </div>
+
+            <div class="category-card">
+                <a href="sports.html">
+                    <img src="images/sports/sport1.jpg" alt="قسم الرياضة">
+                    <h3>👟 المستلزمات الرياضية</h3>
+                </a>
+            </div>
+
+            <div class="category-card">
+                <a href="perfumes.html">
+                    <img src="images/perfumes/perfume1.jpg" alt="قسم العطور">
+                    <h3>🌸 العطور</h3>
+                </a>
+            </div>
+
+            <div class="category-card">
+                <a href="tvs.html">
+                    <img src="images/tvs/tv1.jpg" alt="قسم الشاشات">
+                    <h3>📺 الشاشات</h3>
+                </a>
+            </div>
+
+            <div class="category-card">
+                <a href="makeup.html">
+                    <img src="images/makeup/makeup1.jpg" alt="قسم التجميل">
+                    <h3>💄 أدوات التجميل</h3>
+                </a>
+            </div>
+
+            <div class="category-card">
+                <a href="furniture.html">
+                    <img src="images/furniture/furniture1.jpg" alt="قسم الأثاث">
+                    <h3>🛋️ الأثاث</h3>
+                </a>
+            </div>
+            
+            <div class="category-card">
+                <a href="games.html">
+                    <img src="images/games/game1.jpg" alt="قسم الألعاب الإلكترونية">
+                    <h3>🎮 الألعاب الإلكترونية</h3>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    
+    <footer>
+        <p>حقوق النشر © 2025 - المطورين: </p>
+        <p>محمد إبراهيم علي جميل</p>
+        <p>مدين منصور فوز</p>
+        <p>عبدالرحمن نبيل الغذيفي</p>
+        <p>محمد جميل مبروك</p>
+        <p>📧 البريد: Mohmmed.77@gmail.com | 📞 774220298</p>
+    </footer>
+
+    
+    <script src="script.js"></script>
+    <script>
+        const searchInput = document.querySelector('.search-box input');
+        const searchButton = document.querySelector('.search-box button');
+
+        searchButton.addEventListener('click', function() {
+            const query = searchInput.value.trim().toLowerCase();
+            if (!query) return;
+
+           
+            const pages = [
+        { name: "هاتف سامسونج s21", url: "s21.html" },
+        { name: "هاتف ايفون 13 pro", url: "iphone.html" },
+        { name: "هاتف شاومي نوت 11", url: "xiaomi.html" },
+        { name: "لابتوب hp", url: "hp-laptop.html" },
+        { name: "لابتوب Dell", url: "dell.html" },
+        { name: "لابتوب macbook", url: "macbook.html" },
+        { name: "سماعة Airpods", url: "airpods-details.html" },
+        { name: "ساعة هواوي ", url: "huawei-watch.html" },
+        { name: "ساعة Galaxy Watch7", url: "galaxy-watch7.html" },
+        { name: "سيارة Toyota Corolla 2025", url: "toyota.html" },
+        { name: "سيارة BMW X5 2025", url: "bmw.html" },
+        { name: "سيارة tesla 2025", url: "tesla.html" },
+        { name: "كرة قدم Adidas", url: "adidas-football.html" },
+        { name: "تيشيرت Adidas", url: "adidas-tshirt.html" },
+        { name: "أحذية Nike", url: "nike-shoes.html" },
+        { name: "عطر Armani Code", url: "armani.html" },
+        { name: "عطر Chanel No.5", url: "chanel.html" },
+        { name: "عطر Dior Sauvage", url: "dior.html" },
+        { name: "شاشة LG OLED", url: "lg-oled.html" },
+        { name: "شاشة Samsung Crystal UHD", url: "samsung-tv.html" },
+        { name: "شاشة Sony Bravia XR", url: "sony-bravia.html" },
+        { name: "أحمر شفاه Dior", url: "dior-lipstick.html" },
+        { name: "كريم أساس MAC", url: "mac-foundation.html" },
+        { name: "ماسكارا Maybelline", url: "maybelline-mascara.html" },
+        { name: "ثلاجة Samsung", url: "samsung-fridge.html" },
+        { name: "غسالة LG", url: "lg-washer.html" },
+        { name: "ميكروويف Panasonic", url: "panasonic-microwave.html" },
+        { name: "Nintendo Switch", url: "nintendo-switch.html" },
+        { name: "PlayStation 5", url: "ps5.html" },
+        { name: "Xbox Series X", url: "xbox-series-x.html" },
+            ];
+
+            const result = pages.find(item => item.name.includes(query));
+            if (result) {
+                window.location.href = result.url;
+            } else {
+                alert('عذرًا، لم يتم العثور على المنتج.');
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
