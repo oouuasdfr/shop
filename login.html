@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسجيل الدخول / إنشاء حساب - متجري</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #f5f5f5;
+      font-family: "Cairo", sans-serif;
+    }
+    .login-container {
+      max-width: 420px;
+      background: #fff;
+      padding: 25px;
+      margin: 60px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .login-container button {
+      width: 100%;
+      background: #ff9800;
+      border: none;
+      color: white;
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .login-container button:hover {
+      background: #e68900;
+    }
+    .toggle {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .toggle a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .toggle a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1 class="logo">متجري</h1>
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="contact.html">تواصل معنا</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="login-container">
+    <!-- تسجيل الدخول -->
+    <div id="login-form">
+      <h2>تسجيل الدخول</h2>
+      <form>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <input type="password" placeholder="كلمة المرور" required>
+        <button type="submit">دخول</button>
+      </form>
+      <div class="toggle">
+        <p>ليس لديك حساب؟ <a onclick="showSignup()">إنشاء حساب جديد</a></p>
+      </div>
+    </div>
+
+    <!-- إنشاء حساب -->
+    <div id="signup-form" style="display:none;">
+      <h2>إنشاء حساب جديد</h2>
+      <form>
+        <input type="text" placeholder="الاسم الكامل" required>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <input type="password" placeholder="كلمة المرور" required>
+        <button type="submit">إنشاء الحساب</button>
+      </form>
+      <div class="toggle">
+        <p>لديك حساب بالفعل؟ <a onclick="showLogin()">تسجيل الدخول</a></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>حقوق النشر © 2025 - المطورين: </p>
+    <p> محمد إبراهيم علي جميل</p>
+    <p>مدين منصور فوز</p>
+    <p>عبدالرحمن نبيل الغذيفي</p>
+    <p>محمد جميل مبروك</p>
+  </footer>
+
+  <script>
+    function showSignup() {
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('signup-form').style.display = 'block';
+    }
+    function showLogin() {
+      document.getElementById('login-form').style.display = 'block';
+      document.getElementById('signup-form').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
